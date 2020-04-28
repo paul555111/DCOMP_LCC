@@ -35,7 +35,7 @@ def task(filelist, pathin, pathout):
     
     # Read Reference Images
     filelist_ref = ['fireengine'+str(i+1)+'_20200424.jpg' for i in range(20,30)]  # to be defined in advance
-    path_ref = '/Users/paul5/fireengine' # folder of referenced images
+    path_ref = '/fireengine' # folder of referenced images
     
     for i in range(K):
         img = cv2.imread(os.path.join(path_ref, filelist_ref[i]))
@@ -63,4 +63,4 @@ def task(filelist, pathin, pathout):
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['job1encdata'+str(i+1)+'_20200424.csv' for i in range(3)] 
-    task(filelist,'/Users/paul5/Enc_Data', '/Users/paul5/Enc_Results') 
+    task(filelist,'/Enc_Data', '/Enc_Results') 
