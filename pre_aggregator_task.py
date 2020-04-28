@@ -8,7 +8,7 @@ def task(filelist, pathin, pathout):
     job_id = job_id[3:]
     
     # Load Dictionary of recieved results
-    dict_path = '/Users/paul5/Job_Dictionary/job_dictionary.txt' # to de defined in advacne
+    dict_path = '/Job_Dictionary/job_dictionary.txt' # to de defined in advacne
     with open(dict_path,'r') as inf:
         job_dict = eval(inf.read())
     
@@ -17,7 +17,7 @@ def task(filelist, pathin, pathout):
     
     #Update Dictionanry
     job_dict[job_id].append(filelist[0])
-    with open('/Users/paul5/Job_Dictionary/job_dictionary.txt', 'w') as outfile:
+    with open('/Job_Dictionary/job_dictionary.txt', 'w') as outfile:
         json.dump(job_dict, outfile)
     
     #Check if number of received results for the same job is equal to M
@@ -29,4 +29,4 @@ def task(filelist, pathin, pathout):
             
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['job1encsc1_20200424.csv'] 
-    task(filelist,'/Users/paul5/Enc_Results', '/Users/paul5/Agg_Results')  
+    task(filelist,'/Enc_Results', '/Agg_Results')  
