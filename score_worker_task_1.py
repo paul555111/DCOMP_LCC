@@ -23,7 +23,7 @@ def task(filelist, pathin, pathout):
     
 
     #Worker ID: 1,2,...,N
-    worker_id = 2
+    worker_id = 1
     
     #Parameters
     K = 10 # Number of referenced Images
