@@ -67,4 +67,4 @@ def task(filelist, pathin, pathout):
 
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['job1encsc1_20200424.csv', 'job1encsc2_20200424.csv'] 
-    task(filelist,'/Users/paul5/Agg_Results', '/Users/paul5/Results') 
+    task(filelist,'/Agg_Results', '/Results') 
