@@ -17,7 +17,7 @@ def task(filelist, pathin, pathout):
     
     #Update Dictionanry
     job_dict[job_id].append(filelist[0])
-    with open('/Job_Dictionary/job_dictionary.txt', 'w') as outfile:
+    with open('./Job_Dictionary/job_dictionary.txt', 'w') as outfile:
         json.dump(job_dict, outfile)
     
     #Check if number of received results for the same job is equal to M
@@ -29,4 +29,4 @@ def task(filelist, pathin, pathout):
             
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['job1encsc1_20200424.csv'] 
-    task(filelist,'/Enc_Results', '/Agg_Results')  
+    task(filelist,'./Enc_Results', './Agg_Results')  
