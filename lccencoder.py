@@ -80,5 +80,5 @@ def task(filelist, pathin, pathout):
     
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['fireengine'+str(i+1)+'_20200424.jpg' for i in range(20)] 
+    filelist= ['outclass'+'fireengine'+str(i+1)+'_20200424.jpg' for i in range(20)] 
     task(filelist,'./fireengine', './Enc_Data') 
