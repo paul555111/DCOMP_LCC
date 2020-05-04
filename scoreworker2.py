@@ -62,5 +62,5 @@ def task(filelist, pathin, pathout):
     np.savetxt(os.path.join(pathout,'job'+job_id+'outscore'+str(worker_id)+'_'+snapshot_time+'.csv'), sc, delimiter=',')
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['job1encdata'+str(i+1)+'_20200424.csv' for i in range(3)] 
+    filelist= ['job1outlccencoder'+str(i+1)+'_20200424.csv' for i in range(3)] 
     task(filelist,'./Enc_Data', './Enc_Results') 
