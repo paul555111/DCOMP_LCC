@@ -59,7 +59,7 @@ def task(filelist, pathin, pathout):
     sc = score(En_Image_Batch, Ref_Images)
     
     # Save the encoded score to a csv file 
-    np.savetxt(os.path.join(pathout,'job'+job_id+'encsc'+str(worker_id)+'_'+snapshot_time+'.csv'), sc, delimiter=',')
+    np.savetxt(os.path.join(pathout,'job'+job_id+'outscore'+str(worker_id)+'_'+snapshot_time+'.csv'), sc, delimiter=',')
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['job1encdata'+str(i+1)+'_20200424.csv' for i in range(3)] 
