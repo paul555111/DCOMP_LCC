@@ -24,7 +24,7 @@ def task(filelist, pathin, pathout):
     if len(job_dict[job_id]) == M:
         for i in range(M):
             En_Image_Batch = np.loadtxt(os.path.join(pathin, (job_dict[job_id])[i]), delimiter=',')
-            np.savetxt(os.path.join(pathout,(job_dict[job_id])[i]), En_Image_Batch, delimiter=',')
+            np.savetxt(os.path.join(pathout,(job_dict[job_id])[i].replace('outscore','outpreagg')), En_Image_Batch, delimiter=',')
 
             
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
