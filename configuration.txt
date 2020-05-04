@@ -1,8 +1,8 @@
 7
 Class1 20 True lccencoder
-lccencoder 2 False score_worker1 score_worker2 score_worker3
-score_worker1 1 True pre_aggregator 
-score_worker2 1 True pre_aggregator
-score_worker3 1 True pre_aggregator
-pre_aggregator 3 True lccdecoder
+lccencoder 2 False scoreworker1 scoreworker2 scoreworker3
+scoreworker1 1 True preaggregator 
+scoreworker2 1 True preaggregator
+scoreworker3 1 True preaggregator
+preaggregator 3 True lccdecoder
 lccdecoder 1 True Home
