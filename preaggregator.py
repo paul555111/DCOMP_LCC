@@ -28,5 +28,5 @@ def task(filelist, pathin, pathout):
 
             
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['job1encsc1_20200424.csv'] 
+    filelist= ['job1outscore1_20200424.csv'] 
     task(filelist,'./Enc_Results', './Agg_Results')  
