@@ -4,7 +4,7 @@ import os
 import cv2
 
 def task(filelist, pathin, pathout):     
-    job_id = filelist[0].partition('encsc')[0]
+    job_id = filelist[0].partition('outscore')[0]
     job_id = job_id[3:]
     
     # Load Dictionary of recieved results
