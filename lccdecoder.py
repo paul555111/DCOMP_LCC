@@ -33,7 +33,7 @@ def task(filelist, pathin, pathout):
     snapshot_time = filelist[0].partition('_')[2].partition('.')[0]  #store the data&time info 
     
     # Load id of incoming job (id_job=1,2,3,...)
-    job_id = filelist[0].partition('encsc')[0]
+    job_id = filelist[0].partition('outpreagg')[0]
     job_id = job_id[3:]
    
     #Parameters 
@@ -42,7 +42,7 @@ def task(filelist, pathin, pathout):
     K = 10 # Number of referenced Images
 
     # Results recieved from M workers
-    worker_idx = [int((filelist[i].partition('_')[0]).partition('encsc')[2])-1 for i in range(M)]
+    worker_idx = [int((filelist[i].partition('_')[0]).partition('outpreagg')[2])-1 for i in range(M)]
     worker_eval = [np.loadtxt(os.path.join(pathin, filelist[i]), delimiter=',') for i in range(M)]
     
     # Decoding Process 
@@ -63,8 +63,8 @@ def task(filelist, pathin, pathout):
     
     #Save desired scores of M data-batches
     for j in range(M):
-        np.savetxt(os.path.join(pathout,'job'+job_id+'sc'+str(j)+'_'+snapshot_time+'.csv'), results[j], delimiter=',')
+        np.savetxt(os.path.join(pathout,'job'+job_id+'outlccdecoder'+str(j)+'_'+snapshot_time+'.csv'), results[j], delimiter=',')
 
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['job1encsc1_20200424.csv', 'job1encsc2_20200424.csv'] 
+    filelist= ['job1outpreagg1_20200424.csv', 'job1outpreagg2_20200424.csv'] 
     task(filelist,'./Agg_Results', './Results') 
