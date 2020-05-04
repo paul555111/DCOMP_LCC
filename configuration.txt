@@ -6,5 +6,3 @@ score_worker2 1 True pre_aggregator
 score_worker3 1 True pre_aggregator
 pre_aggregator 3 True lccdecoder
 lccdecoder 1 True Home
-
-
