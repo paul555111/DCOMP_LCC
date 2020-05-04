@@ -72,7 +72,7 @@ def task(filelist, pathin, pathout):
     
     # Save each encoded data-batch i to a csv 
     for i in range(N):
-        np.savetxt(os.path.join(pathout,'job'+str(job_id)+'encdata'+str(i+1)+'_'+snapshot_time+'.csv'), En_Image_Batch[i], delimiter=',')
+        np.savetxt(os.path.join(pathout,'outlccencoder'+'job'+str(job_id)+'encdata'+str(i+1)+'_'+snapshot_time+'.csv'), En_Image_Batch[i], delimiter=',')
     
     # Update id of next job
     job_id+=1
