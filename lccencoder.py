@@ -34,8 +34,9 @@ def LCC_encoding(X,N,M):
 def task(filelist, pathin, pathout):    
     snapshot_time = filelist[0].partition('_')[2].partition('.')[0]  #store the data&time info 
     
-    # Load id of incoming job (id_job=1,2,3,...)
+    ## TO DO: Load id of incoming job (id_job=1,2,3,...) from the server############
     job_id = int(np.loadtxt(os.path.join('./job_id','job_id.csv'), delimiter=','))
+    ################################################################################
     
     # Parameters
     L = 10 # Number of images in a data-batch
@@ -74,10 +75,10 @@ def task(filelist, pathin, pathout):
     for i in range(N):
         np.savetxt(os.path.join(pathout,'job'+str(job_id)+'outlccencoder'+str(i+1)+'_'+snapshot_time+'.csv'), En_Image_Batch[i], delimiter=',')
     
-    # Update id of next job
+    # TO DO: Update id of next job in the server###########################################
     job_id+=1
     np.savetxt(os.path.join('./job_id', 'job_id.csv'), np.asarray([job_id]), delimiter=',')
-    
+    #######################################################################################
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['outclass'+'fireengine'+str(i+1)+'_20200424.jpg' for i in range(20)] 
