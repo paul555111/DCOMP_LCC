@@ -1,4 +1,4 @@
-class outclass inclass
+storeclass1 outclass1 inclass1
 lccencoder outlccencoder outclass
 scoreworker1 outscore1 outlccencoder
 scoreworker2 outscore2 outlccencoder
