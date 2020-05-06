@@ -2,25 +2,33 @@ import numpy as np
 import time
 import os
 import cv2
+import requests
+import json
+
 
 def task(filelist, pathin, pathout):     
     job_id = filelist[0].partition('outscore')[0]
     job_id = job_id[3:]
     
-    ###TO DO: Load Dictionary of recieved results from the server##############
-    dict_path = '/Job_Dictionary/job_dictionary.txt' # to de defined in advacne
-    with open(dict_path,'r') as inf:
-        job_dict = eval(inf.read())
-    ###########################################################################
     
+    hdr = {
+            'Content-Type': 'application/json',
+            'Authorization': None 
+                                }
+    # the message of requesting dictionary
+    payload = {
+        'job_id': job_id,
+        'filename': filelist[0]
+    }
+    
+    # address of flask server is 0.0.0.0:5000 and "post-dict" is for requesting dictionary 
+    url = "http://0.0.0.0:5000/post-dict"
+    
+    # request of dictionary of received results
+    job_dict = requests.post(url, headers = hdr,ata = json.dumps(payload))
+        
     #Parameters
     M = 2 # Number of data-batches
-    
-    ## TO DO: Update Dictionanry in the server#################################
-    job_dict[job_id].append(filelist[0])
-    with open('./Job_Dictionary/job_dictionary.txt', 'w') as outfile:
-        json.dump(job_dict, outfile)
-    ###########################################################################
     
     #Check if number of received results for the same job is equal to M
     if len(job_dict[job_id]) == M:
