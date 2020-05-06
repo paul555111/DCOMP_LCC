@@ -23,7 +23,6 @@ def request_id():
 @app.route('/post-dict',methods=['POST'])
 def request_dict():
     recv = request.get_json()
-    print(recv)
     response = log.get_dict()
     log.dict_update(recv['job_id'],recv['filename'])
     return json.dumps(response)
