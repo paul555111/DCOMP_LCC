@@ -41,7 +41,7 @@ def task(filelist, pathin, pathout):
                                 }
     # message for requesting job_id
     payload = {'event': 'request id'}
-    # address of flask server is 0.0.0.0:5000 and "post-id" is for requesting id
+    # address of flask server for class1 is 0.0.0.0:5000 and "post-id" is for requesting id
     url = "http://0.0.0.0:5000/post-id"
     # request job_id
     job_id = requests.post(url, headers = hdr, data = json.dumps(payload))
