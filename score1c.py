@@ -18,12 +18,13 @@ def task(filelist, pathin, pathout):
     snapshot_time = filelist[0].partition('_')[2].partition('.')[0]  #store the data&time info 
     
     # Load id of incoming job (id_job=1,2,3,...)
-    job_id = filelist[0].partition('outlccencoder')[0]
+    #job_id = filelist[0].partition('outlccencoder')[0]
+    job_id = filelist[0].partition('_')[2].partition('_')[2].partition('_')[0]
     job_id = job_id[3:]
     
 
-    #Worker ID: 1,2,...,N
-    worker_id = 3
+    #Worker ID: a,b,c,...
+    worker_id = 'c'
     
     #Parameters
     K = 10 # Number of referenced Images
@@ -52,15 +53,16 @@ def task(filelist, pathin, pathout):
     
     
     # Read Encoded data-batch   
-    En_Image_Batch = np.loadtxt(os.path.join(pathin, filelist[worker_id]), delimiter=',')
+    En_Image_Batch = np.loadtxt(os.path.join(pathin, filelist[0]), delimiter=',')
     
     
     # Compute Scores of ref images and En_Images
     sc = score(En_Image_Batch, Ref_Images)
     
     # Save the encoded score to a csv file 
-    np.savetxt(os.path.join(pathout,'job'+job_id+'outscore'+str(worker_id)+'_'+snapshot_time+'.csv'), sc, delimiter=',')
+    #np.savetxt(os.path.join(pathout,'job'+job_id+'outscore'+str(worker_id)+'_'+snapshot_time+'.csv'), sc, delimiter=',')
+    np.savetxt(os.path.join(pathout,'score1' + worker_id + '_'+'preaggregator1'+ '_' +'job' + job_id +'_'+snapshot_time+'.csv'), sc, delimiter=',')
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['job1outlccencoder'+str(i+1)+'_20200424.csv' for i in range(3)] 
+    filelist= ['lccencoder1_score1c_job1_20200424.csv'] 
     task(filelist,'./Enc_Data', './Enc_Results') 
