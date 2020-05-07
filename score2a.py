@@ -35,7 +35,7 @@ def task(filelist, pathin, pathout):
     dim = (width, height)   
     
     # Read Reference Images
-    filelist_ref = ['fireengine'+str(i+1)+'_20200424.jpg' for i in range(20,30)]  # to be defined in advance
+    filelist_ref = ['schoolbus'+str(i+1)+'_20200507.jpg' for i in range(20,30)]  # to be defined in advance
     path_ref = './fireengine' # folder of referenced images
     
     for i in range(K):
@@ -64,5 +64,5 @@ def task(filelist, pathin, pathout):
     np.savetxt(os.path.join(pathout,'score2' + worker_id + '_'+'preaggregator2'+ '_' +'job' + job_id +'_'+snapshot_time+'.csv'), sc, delimiter=',')
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['lccencoder2_score2a_job1_20200424.csv'] 
+    filelist= ['lccencoder2_score2a_job1_20200507.csv'] 
     task(filelist,'./Enc_Data', './Enc_Results') 
