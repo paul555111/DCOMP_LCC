@@ -22,7 +22,7 @@ def task(filelist, pathin, pathout):
         'filename': filelist[0]
     }
     
-    # address of flask server is 0.0.0.0:5000 and "post-dict" is for requesting dictionary 
+    # address of flask server for class1 is 0.0.0.0:5000 and "post-dict" is for requesting dictionary 
     url = "http://0.0.0.0:5000/post-dict"
     
     # request of dictionary of received results
