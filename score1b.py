@@ -53,7 +53,7 @@ def task(filelist, pathin, pathout):
     
     
     # Read Encoded data-batch   
-    En_Image_Batch = np.loadtxt(os.path.join(pathin, filelist[worker_id]), delimiter=',')
+    En_Image_Batch = np.loadtxt(os.path.join(pathin, filelist[0]), delimiter=',')
     
     
     # Compute Scores of ref images and En_Images
@@ -64,5 +64,5 @@ def task(filelist, pathin, pathout):
     np.savetxt(os.path.join(pathout,'score1' + worker_id + '_'+'preaggregator1'+ '_' +'job' + job_id +'_'+snapshot_time+'.csv'), sc, delimiter=',')
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['job1outlccencoder'+str(i+1)+'_20200424.csv' for i in range(3)] 
+    filelist= ['lccencoder1_score1b_job1_20200424.csv']  
     task(filelist,'./Enc_Data', './Enc_Results') 
