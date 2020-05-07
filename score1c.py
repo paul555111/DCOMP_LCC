@@ -15,7 +15,7 @@ def score (En_Image_Batch, Ref_Images):
 
 
 def task(filelist, pathin, pathout):    
-    snapshot_time = filelist[0].partition('_')[2].partition('.')[0]  #store the data&time info 
+    snapshot_time = filelist[0].partition('_')[2].partition('_')[2].partition('_')[2].partition('.')[0]  #store the data&time info 
     
     # Load id of incoming job (id_job=1,2,3,...)
     #job_id = filelist[0].partition('outlccencoder')[0]
