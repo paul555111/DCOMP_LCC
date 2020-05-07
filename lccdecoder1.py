@@ -67,4 +67,4 @@ def task(filelist, pathin, pathout):
 
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['preaggregator1_lccdecoder1_score1a_job1_20200424.csv','preaggregator1_lccdecoder1_score1c_job1_20200424.csv'] 
-    task(filelist,'./Agg_Results', './Results') 
+    task(filelist,'./Agg_Results1', './Results1') 
