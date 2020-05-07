@@ -30,10 +30,10 @@ def LCC_decoding(f_eval,N,M,worker_idx):
 
 
 def task(filelist, pathin, pathout): 
-    snapshot_time = filelist[0].partition('_')[2].partition('.')[0]  #store the data&time info 
+    snapshot_time = filelist[0].partition('_')[2].partition('_')[2].partition('_')[2].partition('_')[2].partition('.')[0]  #store the data&time info 
     
     # Load id of incoming job (id_job=1,2,3,...)
-    job_id = filelist[0].partition('outpreagg')[0]
+    job_id = filelist[0].partition('_')[2].partition('_')[2].partition('_')[2].partition('_')[0]
     job_id = job_id[3:]
    
     #Parameters 
@@ -42,7 +42,7 @@ def task(filelist, pathin, pathout):
     K = 10 # Number of referenced Images
 
     # Results recieved from M workers
-    worker_idx = [int((filelist[i].partition('_')[0]).partition('outpreagg')[2])-1 for i in range(M)]
+    worker_idx = [ord((b.partition('_')[2].partition('_')[2].partition('_')[0])[6])-97 for i in range(M)]
     worker_eval = [np.loadtxt(os.path.join(pathin, filelist[i]), delimiter=',') for i in range(M)]
     
     # Decoding Process 
@@ -66,5 +66,5 @@ def task(filelist, pathin, pathout):
         np.savetxt(os.path.join(pathout,'job'+job_id+'outlccdecoder'+str(j)+'_'+snapshot_time+'.csv'), results[j], delimiter=',')
 
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
-    filelist= ['job1outpreagg1_20200424.csv', 'job1outpreagg2_20200424.csv'] 
+    filelist= ['preaggregator1_lccdecoder1_score1a_job1_20200424.csv','preaggregator1_lccdecoder1_score1c_job1_20200424.csv'] 
     task(filelist,'./Agg_Results', './Results') 
