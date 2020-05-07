@@ -36,7 +36,7 @@ def task(filelist, pathin, pathout):
     
     # Read Reference Images
     filelist_ref = ['schoolbus'+str(i+1)+'_20200507.jpg' for i in range(20,30)]  # to be defined in advance
-    path_ref = './fireengine' # folder of referenced images
+    path_ref = './schoolbus' # folder of referenced images
     
     for i in range(K):
         img = cv2.imread(os.path.join(path_ref, filelist_ref[i]))
