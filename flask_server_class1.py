@@ -4,7 +4,7 @@ from flask import request
 from datetime import datetime
 import json
 
-app = Flask('Server')
+app = Flask('Server_class1')
 
 @app.route('/log', methods=['GET'])
 def print_log_callback():
@@ -44,4 +44,4 @@ class EventLog(object):
 
 if __name__ == '__main__':
     log = EventLog()
-    app.run(threaded = True, host = '0.0.0.0')
+    app.run(threaded = True, host = '0.0.0.0') #address
