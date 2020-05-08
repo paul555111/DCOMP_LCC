@@ -42,7 +42,7 @@ def task(filelist, pathin, pathout):
     K = 10 # Number of referenced Images
 
     # Results recieved from M workers
-    worker_idx = [ord((b.partition('_')[2].partition('_')[2].partition('_')[0])[6])-97 for i in range(M)]
+    worker_idx = [ord((filelist[i].partition('_')[2].partition('_')[2].partition('_')[0])[6])-97 for i in range(M)]
     worker_eval = [np.loadtxt(os.path.join(pathin, filelist[i]), delimiter=',') for i in range(M)]
     
     # Decoding Process 
