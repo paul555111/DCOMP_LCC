@@ -82,8 +82,8 @@ def task(filelist, pathin, pathout):
     # Save each encoded data-batch i to a csv 
     for i in range(N):
         #np.savetxt(os.path.join(pathout,'job'+str(job_id)+'outlccencoder'+str(i+1)+'_'+snapshot_time+'.csv'), En_Image_Batch[i], delimiter=',')
-        np.savetxt(os.path.join(pathout,'lccencoder1_score1'+chr(i+97)+'_'+job'+str(job_id)+'_'+snapshot_time+'.csv'), En_Image_Batch[i], delimiter=',')
-    
+        np.savetxt(os.path.join(pathout,'lccencoder1_score1'+chr(i+97)+'_'+'job'+str(job_id)+'_'+snapshot_time+'.csv'), En_Image_Batch[i], delimiter=',')
+     
     
 if __name__ == '__main__': ##THIS IS FOR TESTING - DO THIS
     filelist= ['outclass'+'fireengine'+str(i+1)+'_20200424.jpg' for i in range(20)] 
