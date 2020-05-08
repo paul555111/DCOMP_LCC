@@ -26,7 +26,7 @@ def task(filelist, pathin, pathout):
     url = "http://0.0.0.0:5000/post-dict"
     
     # request of dictionary of received results
-    job_dict = requests.post(url, headers = hdr,ata = json.dumps(payload))
+    job_dict = requests.post(url, headers = hdr,data = json.dumps(payload))
         
     #Parameters
     M = 2 # Number of data-batches
