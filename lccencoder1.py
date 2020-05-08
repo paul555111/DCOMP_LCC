@@ -40,7 +40,7 @@ def task(filelist, pathin, pathout):
             'Authorization': None #not using HTTP secure
                                 }
     # message for requesting job_id
-    payload = {'event': 'request id'}
+    payload = {'class_image': 1}
     # address of flask server for class1 is 0.0.0.0:5000 and "post-id" is for requesting id
     url = "http://0.0.0.0:5000/post-id"
     # request job_id
