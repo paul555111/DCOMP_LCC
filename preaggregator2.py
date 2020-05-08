@@ -18,6 +18,7 @@ def task(filelist, pathin, pathout):
                                 }
     # the message of requesting dictionary
     payload = {
+        'class_image': 2,
         'job_id': job_id,
         'filename': filelist[0]
     }
